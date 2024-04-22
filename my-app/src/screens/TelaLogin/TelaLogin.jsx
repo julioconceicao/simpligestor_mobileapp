@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, Pressable  } from 'react-native';
 import  Icon  from 'react-native-vector-icons/Entypo'
 
-export default function TelaInicial() {
+export default function TelaLogin() {
 
 
   return (

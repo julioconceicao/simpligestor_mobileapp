@@ -1,31 +1,43 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Pressable } from 'react-native';
+import TelaCadastro from '../../screens/TelaCadastro/TelaCadastro';
+import { useNavigation } from '@react-navigation/native';
+
 
 const SwipeButton = () => {
+
+  const navigation = useNavigation();
   const [isProfessional, setIsProfessional] = useState(false);
 
   const toggleSwitch = () => {
     setIsProfessional(previousState => !previousState);
   };
 
+      
+
   return (
-    <TouchableOpacity onPress={toggleSwitch}>
-      <View style={[styles.switch, isProfessional ? styles.switchProfessional : styles.switchClient]}>
-        <View style={styles.switchInner}>
-          <View style={[styles.switchToggle, isProfessional ? styles.switchToggleOn : styles.switchToggleOff]}>
-            <Text style={styles.text}>
-              {isProfessional ? 'Profissional' : 'Cliente'}
-            </Text>
-          </View>
-        </View>
-      </View>
-
-      <View style={styles.line}/>
-
-      <TouchableOpacity style={styles.clickCadastro} >
-        <Text style={styles.textCadastro}>É novo por aqui ? Toque aqui para criar uma conta</Text>
-      </TouchableOpacity>
-    </TouchableOpacity>
+      <>
+        <TouchableOpacity onPress={toggleSwitch}>
+          <View style={[styles.switch, isProfessional ? styles.switchProfessional : styles.switchClient]}>
+            <View style={styles.switchInner}>
+              <View style={[styles.switchToggle, isProfessional ? styles.switchToggleOn : styles.switchToggleOff]}>
+                <Text style={styles.text}>
+                  {isProfessional ? 'Profissional' : 'Cliente'}
+                </Text>
+              </View>
+            </View>
+          </View>     
+        </TouchableOpacity>
+      
+        <View style={styles.line}/>
+      
+        <TouchableOpacity 
+          style={styles.clickCadastro} 
+          onPress={() => navigation.navigate('TelaCadastro')}
+        > 
+          <Text style={styles.textCadastro}>É novo por aqui ? Toque aqui para criar uma conta</Text>
+        </TouchableOpacity>
+      </>
 
     
   );
@@ -93,7 +105,7 @@ const styles = StyleSheet.create({
     height: 1, // altura da linha
     backgroundColor: 'grey', // cor da linha
     position: 'absolute',
-    top: 280,
+    top: "98%",
     alignSelf: 'center'
   },
   clickCadastro: {

@@ -6,16 +6,19 @@ export const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: 'whitesmoke',
       },
+
       title: {
         fontSize: 20,
         fontWeight: 'bold',
         color: 'white',
       },
+
       logo: {
         marginLeft: '11%',
         width: 300,
         height: 300,
       },
+
       textInputEmail: {
         width: '100%',
         height: 50,
@@ -23,6 +26,7 @@ export const styles = StyleSheet.create({
         borderRadius: 30,
         paddingLeft: 15
       },
+      
       textInputSenha: {
         width: '100%',
         height: 50,

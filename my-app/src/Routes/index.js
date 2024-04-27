@@ -12,6 +12,7 @@ import TelaAgendar from '../screens/Agendar/TelaAgendar';
 import { Ionicons, FontAwesome, EvilIcons } from '@expo/vector-icons';
 import BottomTabAgendar from '../components/bottomTabAgendar/BottomTabAgendar';
 import BotaoVoltar from '../components/BotaoVoltar/BotaoVoltar';
+import AgendaDiaria from '../screens/AgendaDiaria/AgendaDiaria'
 
 
 
@@ -34,25 +35,31 @@ export default function Routes() {
             />
             <Stack.Screen
                 name='HomePage'
-                component={HomePageTab} // Usamos um componente diferente para incluir a tab apenas na HomePage
+                component={HomePageTab}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
                 name='Financeiro'
-                component={Financeiro} // Usamos um componente diferente para incluir a tab apenas na HomePage
+                component={Financeiro} 
                 options={{ headerShown: false }}
             />
             <Stack.Screen
                 name='Calendario'
-                component={Calendario} // Usamos um componente diferente para incluir a tab apenas na HomePage
+                component={Calendario} 
                 options={{ headerShown: false }}
+            />
+            <Stack.Screen
+                name='AgendaDiaria'
+                component={AgendaDiaria} 
+                options={{ headerShown: false }}
+                
             />
         </Stack.Navigator>
     );
 }
 
 
- function HomePageTab() {
+ export function HomePageTab() {
      return (
          <Tab.Navigator 
              screenOptions={{
@@ -62,6 +69,7 @@ export default function Routes() {
                  headerTitleStyle: {
                     color: '#3E5DFF',
                     fontWeight: 'bold',
+                    textDecorationLine: 'underline',
                     
                  },              
                  headerRight: () => (
@@ -79,15 +87,14 @@ export default function Routes() {
                      borderTopLeftRadius: 20,
                      borderTopRightRadius: 20,
                      borderColor: 'grey',
-                     borderWidth: 2
-                 },
-                 
-             }} 
-        
+                     borderWidth: 2,
+                     
+                 },                 
+             }}        
          >
 
              <Tab.Screen
-                 name='HomePage'
+                 name='TabHomePage'
                  component={HomePage}
                  options={{
                      tabBarIcon: ({color, size , focused}) => {
@@ -102,10 +109,8 @@ export default function Routes() {
                             source={require('../assets/logo_azul_simpligestor2.png')}
                             style={{ width: 170, height: 50, marginLeft: 10 }} // Ajuste o tamanho da imagem conforme necessário
                         />
-                    ),
-                    
-                    headerTitle: ''
-                    
+                    ),                    
+                    headerTitle: '' //Remove nome do header                    
                  }}
              />
              
@@ -132,6 +137,7 @@ export default function Routes() {
                  name='Financeiro'
                  component={Financeiro}
                  options={{
+                    
                      tabBarIcon: ({color, size, focused}) => {
                          if (focused) {
                              return <FontAwesome name='dollar' size={50} color={color} />
@@ -148,7 +154,7 @@ export default function Routes() {
                  }}
                 
              />    
-
+             
              <Tab.Screen
                  name='TelaAgendar'
                  component={TelaAgendar}
@@ -156,179 +162,14 @@ export default function Routes() {
                     tabBarIcon: ({color, size, }) => (
                         <BottomTabAgendar/>
                     ),
-                    headerLeft: () => ( 
-
-                               
+                    headerLeft: () => (                                
                         <FontAwesome  name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }}  />,
                         <BotaoVoltar/>                       
                      ),         
                  }}
              />
-         </Tab.Navigator>
+        </Tab.Navigator>
      );
  }
 
 
-// import React from 'react';
-// import { createStackNavigator } from '@react-navigation/stack';
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-// import TelaLogin from '../screens/TelaLogin/TelaLogin';
-// import TelaCadastro from '../screens/TelaCadastro/TelaCadastro';
-// import HomePage from '../screens/Home/HomePage';
-// import  {Financeiro}  from '../screens/Financeiro/Financeiro';
-
-// const Stack = createStackNavigator();
-// const Tab = createBottomTabNavigator();
-
-// export default function Routes() {
-//     return (
-//         <Stack.Navigator>
-//             <Stack.Screen
-//                 name='TelaLogin'
-//                 component={TelaLogin}
-//                 options={{ headerShown: false }}
-//             />
-//             <Stack.Screen
-//                 name='TelaCadastro'
-//                 component={TelaCadastro}
-//                 options={{ headerShown: false }}
-//             />
-//             <Stack.Screen
-//                 name='HomePage'
-//                 component={HomePage}
-//                 options={{ headerShown: false }}
-//             />
-//             <Stack.Screen
-//                 name='Main'
-//                 component={MainStackNavigator} // Alteração aqui
-//                 options={{ headerShown: false }}
-//             />
-//         </Stack.Navigator>
-//     );
-// }
-
-// function MainStackNavigator() { // Novo componente para o StackNavigator dentro do TabNavigator
-//     return (
-//         <Tab.Navigator>
-//             <Tab.Screen
-//                 name='HomePage'
-//                 component={HomePage}
-//             />
-//             <Tab.Screen
-//                 name='Financeiro'
-//                 component={Financeiro}
-//             />
-//         </Tab.Navigator>
-//     );
-// }
-
-
-
-// import React from 'react';
-// import { createStackNavigator } from '@react-navigation/stack';
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-// import TelaLogin from '../screens/TelaLogin/TelaLogin';
-// import TelaCadastro from '../screens/TelaCadastro/TelaCadastro';
-// import HomePage from '../screens/Home/HomePage';
-// import { Financeiro } from '../screens/Financeiro/Financeiro';
-
-// const Stack = createStackNavigator();
-// const Tab = createBottomTabNavigator();
-
-// export default function Routes() {
-//     return (
-//         <Stack.Navigator>
-//             <Stack.Screen
-//                 name='TelaLogin'
-//                 component={TelaLogin}
-//                 options={{ headerShown: false }}
-//             />
-//             <Stack.Screen
-//                 name='TelaCadastro'
-//                 component={TelaCadastro}
-//                 options={{ headerShown: false }}
-//             />
-//             <Stack.Screen
-//                 name='Main'
-//                 component={MainTabNavigator}
-//                 options={{ headerShown: false }}
-//             />
-//         </Stack.Navigator>
-//     );
-// }
-
-// function MainTabNavigator() {
-//     return (
-//         <Tab.Navigator>
-//             { <Tab.Screen
-//                 name='HomePage'
-//                 component={HomePage}
-//             /> }
-//             <Tab.Screen
-//                 name='Financeiro'
-//                 component={Financeiro}
-//             />
-//         </Tab.Navigator>
-//     );
-// }
-
-
-
-// import { createStackNavigator } from '@react-navigation/stack'
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-
-// import TelaLogin from '../screens/TelaLogin/TelaLogin';
-// import TelaCadastro from '../screens/TelaCadastro/TelaCadastro';
-// import HomePage from '../screens/Home/HomePage'
-// import { Financeiro } from '../screens/Financeiro/Financeiro';
-// import { View } from 'react-native';
-
-
-// const Stack = createStackNavigator();
-// const Tab = createBottomTabNavigator();
-
-
-// export default function Routes() {
-//     return(
-//         <>
-//             <Stack.Navigator>
-//                 <Stack.Screen
-//                     name = 'TelaLogin'
-//                     component={TelaLogin}
-//                     options={{headerShown: false}}
-//                 />    
-
-//                 <Stack.Screen
-//                     name = 'TelaCadastro'
-//                     component={TelaCadastro}
-//                     options={{headerShown: false}}
-//                 />    
-//                 <Stack.Screen
-//                     name = 'HomePage'
-//                     component={HomePage}
-//                     options={{headerShown: false}}
-//                 />    
-//             </Stack.Navigator>
-
-//             <Tab.Navigator screenOptions={{headerShown: false}}>
-            
-//             <Tab.Screen
-//                 name='HomePage'
-//                 component={HomePage}
-                
-//             />
-//             <Tab.Screen
-//                 name='Financeiro'
-//                 component={Financeiro}
-//             />
-            
-//         </Tab.Navigator>
-
-            
-//         </>
-
-        
-//     )    
-// }

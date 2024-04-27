@@ -24,7 +24,7 @@ export default function HomePage() {
       </View>
 
       <View style={styles.buttonDiaContainer}>
-        <TouchableOpacity style={styles.botaoDia}>
+        <TouchableOpacity style={styles.botaoDia} onPress={() => navigation.navigate('AgendaDiaria')}>
           <FontAwesome name='check-square-o' size={50} color={'white'} />
         </TouchableOpacity>
         <Text style={styles.labelDia}>Dia</Text>

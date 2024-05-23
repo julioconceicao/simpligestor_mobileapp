@@ -1,9 +1,11 @@
-import { useState } from 'react';
-import { View, Text, StyleSheet, Image, TextInput, Pressable  } from 'react-native';
-import  Icon  from 'react-native-vector-icons/Entypo'
+import React, { useEffect } from 'react';
+import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { useNavigation, useIsFocused } from '@react-navigation/native';
+import SwipeButton from '../../components/swipeButton/SwipeButton'; // Certifique-se de que o caminho esteja correto
+import { styles } from './TelaLoginStyle';
 
 export default function TelaLogin() {
-
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -12,58 +14,25 @@ export default function TelaLogin() {
         style={styles.logo}
       />
       
+      {/* Input email e senha */}
       <TextInput style={styles.textInputEmail} placeholder='Email' />
-      <TextInput style={styles.textInputSenha} placeholder='Senha' />
+      <TextInput style={styles.textInputSenha} placeholder='Senha' secureTextEntry={true} />
 
-      <Pressable style={styles.botaoEntrar} >
-        <Text>Acessar</Text>
-      </Pressable>
-
-
+      {/* Botão para entrar (Tela de login) */}
+      <TouchableOpacity 
+        style={styles.botaoEntrar} 
+        onPress={() => navigation.navigate('HomePage')}
+      >
+        <Text style={styles.text}>Acessar</Text>
+      </TouchableOpacity>
+      
+      <SwipeButton/>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: 'whitesmoke',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'white',
-  },
-  logo: {
-    marginLeft: '11%',
-    width: 300,
-    height: 300,
-  },
-  textInputEmail: {
-    width: '100%',
-    height: 50,
-    backgroundColor: '#dcdcdc',
-    borderRadius: 30,
-    paddingLeft: 15
-  },
-  textInputSenha: {
-    width: '100%',
-    height: 50,
-    backgroundColor: '#dcdcdc',
-    borderRadius: 30,
-    paddingLeft: 15,
-    marginTop: 15
-  },
-  botaoEntrar: {
-    marginTop: 45,
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 30,
-    backgroundColor: '#3E5DFF',
-    
-  }
 
-  
-});
+
+
+
+

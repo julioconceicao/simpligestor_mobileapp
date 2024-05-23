@@ -24,14 +24,14 @@ export default function HomePage() {
       </View>
 
       <View style={styles.buttonDiaContainer}>
-        <TouchableOpacity style={styles.botaoDia} onPress={() => navigation.navigate('AgendaDiaria')}>
+        <TouchableOpacity style={styles.botaoDia} onPress={() => navigation.navigate('Agenda Diaria')}>
           <FontAwesome name='check-square-o' size={50} color={'white'} />
         </TouchableOpacity>
         <Text style={styles.labelDia}>Dia</Text>
       </View>
       
       <View style={styles.buttonServicosContainer}>
-        <TouchableOpacity style={styles.botaoServicos}>
+        <TouchableOpacity style={styles.botaoServicos} onPress={() => navigation.navigate('Servicos')}>
           <Foundation name='database' size={50} color={'white'} />
         </TouchableOpacity>
         <Text style={styles.labelServicos}>Servicos</Text>
@@ -45,14 +45,14 @@ export default function HomePage() {
       </View>
       
       <View style={styles.buttonHistoricoContainer}>
-        <TouchableOpacity style={styles.botaoHistorico} >
+        <TouchableOpacity style={styles.botaoHistorico} onPress={() => navigation.navigate('Historico')}>
           <FontAwesome name='history' size={50} color={'white'} />
         </TouchableOpacity>
         <Text style={styles.labelHistorico}>Historico</Text>
       </View>
       
       <View style={styles.buttonLembretesContainer}>
-        <TouchableOpacity style={styles.botaoLembretes}>
+        <TouchableOpacity style={styles.botaoLembretes} onPress={() => navigation.navigate('Lembretes')}>
           <FontAwesome name='bell' size={50} color={'white'} />
         </TouchableOpacity>
         <Text style={styles.labelLembretes}>Lembretes</Text>

@@ -1,13 +1,12 @@
-import { useState } from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity   } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { useNavigation, useIsFocused } from '@react-navigation/native';
+import SwipeButton from '../../components/swipeButton/SwipeButton'; // Certifique-se de que o caminho esteja correto
 import { styles } from './TelaLoginStyle';
-import SwipeButton from '../../components/swipeButton/SwipeButton.jsx';
-import { useNavigation } from '@react-navigation/native';
-
-
 
 export default function TelaLogin() {
   const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Image
@@ -15,23 +14,25 @@ export default function TelaLogin() {
         style={styles.logo}
       />
       
-      {/*input email e senha*/}
+      {/* Input email e senha */}
       <TextInput style={styles.textInputEmail} placeholder='Email' />
       <TextInput style={styles.textInputSenha} placeholder='Senha' secureTextEntry={true} />
 
-
-      {/* Botao para entrar (Tela de login) */}
+      {/* Botão para entrar (Tela de login) */}
       <TouchableOpacity 
         style={styles.botaoEntrar} 
-        onPress={() => navigation.navigate('HomePage')} 
+        onPress={() => navigation.navigate('HomePage')}
       >
         <Text style={styles.text}>Acessar</Text>
       </TouchableOpacity>
       
       <SwipeButton/>
-      
     </View>
-    
   );
 }
+
+
+
+
+
 

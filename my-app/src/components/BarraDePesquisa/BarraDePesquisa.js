@@ -21,9 +21,7 @@ const SearchBar = () => {
                 placeholderTextColor="#999"
                 autoCapitalize="none"
             />
-            <Text style={styles.textSearch}>
-                O que você procura?
-            </Text>
+            
         </View>
     );
 };
@@ -52,11 +50,7 @@ const styles = StyleSheet.create({
         top: '50%',
         transform: [{ translateY: -20 }], // Ajusta verticalmente para centralizar o ícone na barra de pesquisa
     },
-    textSearch: {
-        position: 'absolute',
-        top: -25,
-        left: 15
-    }
+    
 });
 
 export default SearchBar;

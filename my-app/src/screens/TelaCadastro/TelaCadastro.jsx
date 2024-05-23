@@ -1,9 +1,21 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
+import { useNavigation, useIsFocused } from '@react-navigation/native';
 import TelaCadastroComponents from '../../components/TelaCadastroComponents/TelaCadastro'
 import { styles } from './TelaCadastroStyle';
 
 export default function TelaCadastro() {
+
+  const navigation = useNavigation();
+  const isFocused = useIsFocused();
+
+  useEffect(() => {
+    if (isFocused) {
+      navigation.getParent()?.setOptions({ tabBarStyle: { display: 'none' } });
+    } else {
+      navigation.getParent()?.setOptions({ tabBarStyle: undefined });
+    }
+  }, [isFocused, navigation]);
 
     const [nome, setNome] = useState('');
     const [email, setEmail] = useState('');

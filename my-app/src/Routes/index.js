@@ -165,9 +165,7 @@ export default function Routes() {
     const navigation = useNavigation();
     return (
         <Tab.Navigator
-            screenOptions={{
-                            
-                
+            screenOptions={{    
                 headerTitleAlign: 'center',
                 headerTitleStyle: {
                     color: '#3E5DFF',
@@ -203,7 +201,7 @@ export default function Routes() {
 
             <Tab.Screen
                 name='TabHomePage'
-                component={StackRoutes}
+                component={HomePage}
                 options={{
                     tabBarIcon: ({ color, size, focused }) => {
                         if (focused) {

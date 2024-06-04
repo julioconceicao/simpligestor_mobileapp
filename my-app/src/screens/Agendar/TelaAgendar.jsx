@@ -6,7 +6,7 @@ import { styles } from './TelaAgendarStyle';
 export default function TelaAgendar() {
   return (
     <View style={styles.container}>
-        <Text>agendar</Text>
+        <Text>Agendar</Text>
     </View>
   );
 }

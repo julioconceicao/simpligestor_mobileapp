@@ -1,7 +1,26 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Calendar } from 'react-native-calendars';
+import { Calendar, LocaleConfig } from 'react-native-calendars';
 import moment from 'moment';
+
+//Configurando localidade
+LocaleConfig.locales['pt-br'] = {
+  monthNames: [
+    'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+    'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+  ],
+  monthNamesShort: [
+    'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun',
+    'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
+  ],
+  dayNames: [
+    'Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira',
+    'Quinta-feira', 'Sexta-feira', 'Sábado'
+  ],
+  dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+  today: 'Hoje'
+};
+LocaleConfig.defaultLocale = 'pt-br';
 
 const CalendarioComponent = () => {
   // Formatar a data atual para exibir o nome do mês
@@ -24,27 +43,29 @@ const CalendarioComponent = () => {
         monthFormat={'MMMM yyyy'} // Formato do nome do mês e do ano
         markedDates={{
           
-          '2024-04-26': { disabled: true },
-          '2024-04-27': { selected: true, marked: true, selectedColor: '#f08080' },
-          '2024-04-28': { selected: true, marked: true, selectedColor: '#f08080' },
-          '2024-04-29': { selected: true, marked: true, selectedColor: '#f08080' },
-          '2024-04-30': { selected: true, marked: true, selectedColor: '#f08080' },
-          '2024-05-01': { selected: true, marked: true, selectedColor: '#00ced1' },
-          '2024-05-02': { selected: true, marked: true, selectedColor: '#00ced1' },
-          '2024-05-03': { selected: true, marked: true, selectedColor: '#00ced1' },
-          '2024-05-04': { marked: true },
-          '2024-05-05': { marked: true },
+          '2024-06-08': { disabled: true },
+          '2024-06-10': { marked: true },
+          '2024-06-11': { marked: true },
+          '2024-06-12': { selected: true, marked: true, selectedColor: '#f08080' },
+          '2024-06-13': { selected: true, marked: true, selectedColor: '#f08080' },
+          '2024-06-14': { selected: true, marked: true, selectedColor: '#f08080' },
+          '2024-06-15': { selected: true, marked: true, selectedColor: '#f08080' },
+          '2024-06-17': { selected: true, marked: true, selectedColor: '#00ced1' },
+          '2024-06-18': { selected: true, marked: true, selectedColor: '#00ced1' },
+          '2024-06-19': { selected: true, marked: true, selectedColor: '#00ced1' },
+          
           
         }}
+        locale={'pt-br'}
       />
 
       <Text style={styles.agenda}>Agenda Mensal</Text>
       
       <Text style={styles.disponiveis}></Text> 
-      <Text style={styles.disponiveisText}> Disponíveis</Text> 
+      <Text style={styles.disponiveisText}>Disponível</Text> 
       
       <Text style={styles.cheia}></Text> 
-      <Text style={styles.cheiaText}>cheia</Text> 
+      <Text style={styles.cheiaText}>Indisponível</Text> 
 
 
     </View>

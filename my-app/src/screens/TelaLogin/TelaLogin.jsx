@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Image, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, Image, TextInput, TouchableOpacity, Text,} from 'react-native';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
 import SwipeButton from '../../components/swipeButton/SwipeButton'; // Certifique-se de que o caminho esteja correto
 import { styles } from './TelaLoginStyle';
@@ -27,6 +27,7 @@ export default function TelaLogin() {
       </TouchableOpacity>
       
       <SwipeButton/>
+      
     </View>
   );
 }

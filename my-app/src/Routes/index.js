@@ -36,7 +36,6 @@ function StackRoutes() {
                 headerTitleStyle: {
                     color: '#3E5DFF',
                     fontWeight: 'bold',
-                    textDecorationLine: 'underline',
 
                 },
                 headerRight: () => ( 
@@ -171,7 +170,7 @@ export default function Routes() {
                 headerTitleStyle: {
                     color: '#3E5DFF',
                     fontWeight: 'bold',
-                    textDecorationLine: 'underline',
+                    
 
                 },
                 headerRight: () => (
@@ -266,6 +265,5 @@ export default function Routes() {
         </Tab.Navigator>
     );
 } 
-
 
 

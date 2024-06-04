@@ -7,7 +7,6 @@ import { styles } from './LembretesStyle';
 export function Lembretes() {
   return (
     <View style={styles.container}>
-        <SearchBar />
         <Text>Lembretes</Text>
     </View>
   );

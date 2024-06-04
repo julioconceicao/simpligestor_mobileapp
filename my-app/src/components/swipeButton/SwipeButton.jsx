@@ -118,7 +118,8 @@ const styles = StyleSheet.create({
     color: '#3E5DFF',
     textDecorationLine: 'underline',
     position: 'absolute',
-    top: 297
+    top: 200,
+    
   },
 
 });

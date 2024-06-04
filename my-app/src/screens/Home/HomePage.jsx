@@ -13,6 +13,7 @@ export default function HomePage() {
 
   return (
     <View style={styles.container}>
+       
       <SearchBar />
 
       
@@ -34,21 +35,21 @@ export default function HomePage() {
         <TouchableOpacity style={styles.botaoServicos} onPress={() => navigation.navigate('Servicos')}>
           <Foundation name='database' size={50} color={'white'} />
         </TouchableOpacity>
-        <Text style={styles.labelServicos}>Servicos</Text>
+        <Text style={styles.labelServicos}>Serviços</Text>
       </View>
       
       <View style={styles.buttonFinancasContainer}>
         <TouchableOpacity style={styles.botaoFinancas} onPress={() => navigation.navigate('Financeiro')}>
           <FontAwesome name='dollar' size={50} color={'white'} />
         </TouchableOpacity>
-        <Text style={styles.labelFinancas}>Financas</Text>
+        <Text style={styles.labelFinancas}>Finanças</Text>
       </View>
       
       <View style={styles.buttonHistoricoContainer}>
         <TouchableOpacity style={styles.botaoHistorico} onPress={() => navigation.navigate('Historico')}>
           <FontAwesome name='history' size={50} color={'white'} />
         </TouchableOpacity>
-        <Text style={styles.labelHistorico}>Historico</Text>
+        <Text style={styles.labelHistorico}>Histórico</Text>
       </View>
       
       <View style={styles.buttonLembretesContainer}>

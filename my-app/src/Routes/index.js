@@ -12,7 +12,7 @@ import TelaAgendar from '../screens/Agendar/TelaAgendar';
 import BottomTabAgendar from '../components/bottomTabAgendar/BottomTabAgendar';
 import BotaoVoltar from '../components/BotaoVoltar/BotaoVoltar';
 import AgendaDiaria from '../screens/AgendaDiaria/AgendaDiaria'
-import {Lembretes}  from '../screens/Lembretes/Lembretes';
+import { Lembretes } from '../screens/Lembretes/Lembretes';
 import { Servicos } from '../screens/Servicos/Servicos';
 import { Historico } from '../screens/Historico/Historico';
 import { Perfil } from '../screens/Perfil/Perfil';
@@ -30,7 +30,7 @@ function StackRoutes() {
     const navigation = useNavigation();
     return (
 
-        <Stack.Navigator 
+        <Stack.Navigator
             screenOptions={{
                 headerTitleAlign: 'center',
                 headerTitleStyle: {
@@ -39,10 +39,10 @@ function StackRoutes() {
                     textDecorationLine: 'underline',
 
                 },
-                headerRight: () => ( 
-                    <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>                 
+                headerRight: () => (
+                    <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
                         <EvilIcons name='user' size={60} color={'#3E5DFF'} style={{ marginRight: 10 }}
-                            
+
                         />
                     </TouchableOpacity>
                 ),
@@ -67,9 +67,9 @@ function StackRoutes() {
             <Stack.Screen
                 name='TelaLogin'
                 component={TelaLogin}
-                options={{ 
+                options={{
 
-                    headerShown: false,                    
+                    headerShown: false,
                 }}
             />
 
@@ -78,11 +78,11 @@ function StackRoutes() {
                 component={TelaCadastro}
                 options={{ headerShown: false }}
             />
-            
+
             <Stack.Screen
                 name='HomePage'
                 component={HomePage}
-                options={{ 
+                options={{
                     headerLeft: () => (
                         <Image
                             source={require('../assets/logo_azul_simpligestor2.png')}
@@ -92,32 +92,36 @@ function StackRoutes() {
                     headerTitle: ''
                 }}
             />
-            
+
             <Stack.Screen
                 name='Financeiro'
                 component={Financeiro}
-                options={{headerLeft: () => (
-                    <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
-                    <BotaoVoltar />
-                ),}}
+                options={{
+                    headerLeft: () => (
+                        <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
+                        <BotaoVoltar />
+                    ),
+                }}
             />
-            
+
             <Stack.Screen
                 name='Calendario'
                 component={Calendario}
-                options={{headerLeft: () => (
-                    <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
-                    <BotaoVoltar />
-                )}}                               
+                options={{
+                    headerLeft: () => (
+                        <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
+                        <BotaoVoltar />
+                    )
+                }}
             />
-            
+
             <Stack.Screen
                 name='Agenda Diaria'
                 component={AgendaDiaria}
                 options={{
                     headerLeft: () => (
-                    <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
-                    <BotaoVoltar />
+                        <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
+                        <BotaoVoltar />
                     ),
                 }}
 
@@ -126,47 +130,54 @@ function StackRoutes() {
             <Stack.Screen
                 name='Lembretes'
                 component={Lembretes}
-                options={{headerLeft: () => (
-                    <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
-                    <BotaoVoltar />
-                ),}}
+                options={{
+                    headerLeft: () => (
+                        <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
+                        <BotaoVoltar />
+                    ),
+                }}
             />
 
             <Stack.Screen
                 name='Servicos'
                 component={Servicos}
-                options={{headerLeft: () => (
-                    <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
-                    <BotaoVoltar />
-                ),}}
+                options={{
+                    headerLeft: () => (
+                        <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
+                        <BotaoVoltar />
+                    ),
+                }}
             />
 
             <Stack.Screen
                 name='Historico'
                 component={Historico}
-                options={{headerLeft: () => (
-                    <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
-                    <BotaoVoltar />
-                ),}}                
+                options={{
+                    headerLeft: () => (
+                        <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
+                        <BotaoVoltar />
+                    ),
+                }}
             />
             <Stack.Screen
                 name='Perfil'
                 component={Perfil}
-                options={{headerLeft: () => (
-                    <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
-                    <BotaoVoltar />
-                ),}}
+                options={{
+                    headerLeft: () => (
+                        <FontAwesome name='arrow-left' size={40} color={'#3E5DFF'} style={{ marginLeft: 10 }} />,
+                        <BotaoVoltar />
+                    ),
+                }}
             />
         </Stack.Navigator>
     );
 }
 
-
 export default function Routes() {
     const navigation = useNavigation();
     return (
         <Tab.Navigator
-            screenOptions={{    
+            screenOptions={{
                 headerTitleAlign: 'center',
                 headerTitleStyle: {
                     color: '#3E5DFF',
@@ -175,16 +186,16 @@ export default function Routes() {
 
                 },
                 headerRight: () => (
-                    <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>                 
+                    <TouchableOpacity onPress={() => navigation.navigate('Perfil')}>
                         <EvilIcons name='user' size={60} color={'#3E5DFF'} style={{ marginRight: 10 }}
-                            
+
                         />
                     </TouchableOpacity>
                 ),
                 headerStyle: {
                     backgroundColor: 'whitesmoke'
                 },
-                
+
                 tabBarInactiveTintColor: '#3E5DFF',
                 tabBarShowLabel: false,
                 tabBarStyle: {
@@ -211,7 +222,7 @@ export default function Routes() {
                         return <Ionicons name='home-outline' size={40} color={color} />
                     },
                     headerShown: false
-                     //Remove nome do header                    
+                    //Remove nome do header                    
                 }}
             />
 
@@ -265,7 +276,7 @@ export default function Routes() {
             />
         </Tab.Navigator>
     );
-} 
+}
 
 
 
